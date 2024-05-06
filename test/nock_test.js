@@ -9,7 +9,6 @@ const userDataHandler = new UserDataHandler()
 
 describe('Test user data handler with nock', function () {
   let users
-  let axiosStub
   let userEmailList
   let usersStub
   const pathToUsersJson = path.join(process.cwd(), 'data', 'users.json')

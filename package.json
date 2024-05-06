@@ -4,7 +4,7 @@
   "description": "a project used for the unit testing with NodeJS home task",
   "main": "index.js",
   "scripts": {
-    "test": "npm test",
+    "test": "npx nyc@latest mocha",
     "start-server": "node ./src/server/server.js",
     "eslint": "eslint ./"
   },
@@ -28,6 +28,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "chai": "^5.1.0",
     "eslint": "^7.10.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.22.0",
@@ -35,7 +36,9 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.3.0",
-    "mocha": "^8.1.3",
-    "nyc": "^15.1.0"
+    "mocha": "^8.4.0",
+    "nock": "^13.5.4",
+    "nyc": "^15.1.0",
+    "sinon": "^17.0.1"
   }
 }

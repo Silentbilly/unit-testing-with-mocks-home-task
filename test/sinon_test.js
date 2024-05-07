@@ -117,15 +117,18 @@ describe('Test user data handler with nock', function () {
   })
 
   describe('Checking if user matches all search parameters provided in searchParamsObject tests', function () {
+    const validUser = { id: 1, name: 'Leanne Graham' }
+    const invalidUser = { id: 12, name: 'Leanne Graham' };
+
     beforeEach(async () => {
       isMatchingAllSearchParamsStub.restore()
     })
     it('Is user matches all search parameters provided in searchParamsObject', async function () {
-      assert.deepEqual(userDataHandler.isMatchingAllSearchParams({ id: 1, name: 'Leanne Graham' }, { id: 1, name: 'Leanne Graham' }), true)
+      assert.deepEqual(userDataHandler.isMatchingAllSearchParams(validUser, validUser), true)
     })
 
     it('Method returns false when any search parameter is not matching', async function () {
-      assert.deepEqual(userDataHandler.isMatchingAllSearchParams({ id: 1, name: 'Leanne Graham' }, { id: 12, name: 'Leanne Graham' }), false)
+      assert.deepEqual(userDataHandler.isMatchingAllSearchParams(validUser, invalidUser), false)
     })
   })
 })
